@@ -59,10 +59,9 @@ def visualize_data(df):
     sns.boxplot(data=df.drop(columns=['fips']))
     plt.show()
 
-def main():
-    df = acquire_data()
-    cleaned_df = clean_and_impute_data(df)
-    visualize_data(cleaned_df)
-
-if __name__ == "__main__":
-    main()
+def visualize_data2(df):
+    cols = ['bedroomcnt', 'bathroomcnt', 'calculatedfinishedsquarefeet', 'taxvaluedollarcnt', 'yearbuilt', 'taxamount', 'fips']
+    plt.figure(figsize = (3,2))
+    sns.histplot(data = df, x=cols)
+    plt.title(f'Distribution of {col}')
+    plt.show
