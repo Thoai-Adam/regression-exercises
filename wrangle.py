@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from env import get_connection  # Make sure these variables are defined in env.py
+from sklearn.model_selection import train_test_split
 
 def acquire_data():
     url = get_connection('zillow')
@@ -95,3 +96,14 @@ def prepare_zillow_data():
     df_train_scaled, df_validate_scaled, df_test_scaled = apply_scaling(df_train, df_validate, df_test, MinMaxScaler())
 
     return df_train_scaled, df_validate_scaled, df_test_scaled
+
+
+def train_val_test(df, seed = 42):
+    
+    train, val_test = train_test_split(df, train_size = 0.7,
+                                       random_state = seed)
+    
+    val, test = train_test_split(val_test, train_size = 0.5,
+                                 random_state = seed)
+    
+    return train, val, test

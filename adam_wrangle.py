@@ -48,3 +48,22 @@ def compare_data():
     sns.histplot(data=train, x= 'final_grade_mms', bins=10)
 
     plt.show()
+    
+import os
+import pandas as pd
+
+from env import get_connection
+from sklearn.model_selection import train_test_split
+
+
+
+
+def train_val_test(df, seed = 42):
+    
+    train, val_test = train_test_split(df, train_size = 0.7,
+                                       random_state = seed)
+    
+    val, test = train_test_split(val_test, train_size = 0.5,
+                                 random_state = seed)
+    
+    return train, val, test
