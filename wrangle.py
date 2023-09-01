@@ -107,3 +107,35 @@ def train_val_test(df, seed = 42):
                                  random_state = seed)
     
     return train, val, test
+
+
+
+
+def columns_scaling(df):
+        # Columns to scale
+        cols_to_scale = ['bedroomcnt', 'bathroomcnt', 'calculatedfinishedsquarefeet', 'taxvaluedollarcnt', 'yearbuilt', 'taxamount']
+
+        # Fit scaler on training data and transform all data splits
+        StandardScaler.fit(df_train[cols_to_scale])
+        df_train[cols_to_scale] = scaler.transform(df_train[cols_to_scale])
+        df_validate[cols_to_scale] = scaler.transform(df_validate[cols_to_scale])
+        df_test[cols_to_scale] = scaler.transform(df_test[cols_to_scale])
+
+        return df_train, df_validate, df_test
+    
+    
+    
+def prepare_zillow_data():
+    # Acquire and clean data
+    df = acquire_data()
+    df_cleaned = clean_and_impute_data(df)
+
+    # Visualize cleaned data
+    visualize_data(df_cleaned)
+
+    # Split data into train, validate, and test sets
+
+    # Apply scaling using MinMaxScaler
+    df_train_scaled, df_validate_scaled, df_test_scaled = apply_scaling(df_train, df_validate, df_test, MinMaxScaler())
+
+    return df_train_scaled, df_validate_scaled, df_test_scaled
