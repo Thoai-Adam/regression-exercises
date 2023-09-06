@@ -3,6 +3,7 @@ import pandas as pd
 
 from env import get_connection
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
 
 
 def get_grades():
@@ -63,12 +64,16 @@ def scale_data(train, val, test, to_scale):
     train_scaled = train.copy()
     validate_scaled = val.copy()
     test_scaled = test.copy()
+
     #make the thing
     scaler = MinMaxScaler()
+
     #fit the thing
     scaler.fit(train[to_scale])
+
     #use the thing
     train_scaled[to_scale] = scaler.transform(train[to_scale])
     validate_scaled[to_scale] = scaler.transform(val[to_scale])
     test_scaled[to_scale] = scaler.transform(test[to_scale])
+    
     return train_scaled, validate_scaled, test_scaled
