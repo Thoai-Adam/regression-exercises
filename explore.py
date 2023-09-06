@@ -32,26 +32,3 @@ def plot_variable_pairs(df):
     plt.show()
     
 
-def explore_plot_variable_pairs(df):
-    sns.pairplot(df, kind="reg", plot_kws={'line_kws':{'color':'red'}})
-    plt.show()
-
-def explore_plot_categorical_and_continuous_vars(df, cat_var, cont_var):
-    plt.figure(figsize=(16, 6))
-
-    # Boxplot
-    plt.subplot(131)
-    sns.boxplot(data=df, x=cat_var, y=cont_var)
-    plt.title('Boxplot')
-
-    # Violinplot
-    plt.subplot(132)
-    sns.violinplot(data=df, x=cat_var, y=cont_var)
-    plt.title('Violinplot')
-
-    # Barplot
-    plt.subplot(133)
-    sns.barplot(data=df, x=cat_var, y=cont_var)
-    plt.title('Barplot')
-
-    plt.show()

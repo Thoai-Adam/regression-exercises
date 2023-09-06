@@ -2,6 +2,7 @@ import os
 import pandas as pd
 
 from env import get_connection
+from sklearn.model_selection import train_test_split
 
 
 def get_grades():
@@ -40,23 +41,6 @@ def clean_grades():
     
     return df    
 
-def compare_data():
-    plt.subplot(121)
-    sns.histplot(data=train, x='final_grade', bins=10)
-
-    plt.subplot(122)  # 1 row and 2 columns
-    sns.histplot(data=train, x= 'final_grade_mms', bins=10)
-
-    plt.show()
-    
-import os
-import pandas as pd
-
-from env import get_connection
-from sklearn.model_selection import train_test_split
-
-
-
 
 def train_val_test(df, seed = 42):
     
@@ -67,3 +51,8 @@ def train_val_test(df, seed = 42):
                                  random_state = seed)
     
     return train, val, test
+
+
+def xy_split(df):
+    
+    return df.drop(columns=['price']), df.price
