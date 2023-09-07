@@ -56,7 +56,7 @@ def train_val_test(df, seed = 42):
 
 def xy_split(df):
     
-    return df.drop(columns=['price']), df.price
+    return df.drop(columns=['final_grade']), df.grades
 
 
 def scale_data(train, val, test, to_scale):
