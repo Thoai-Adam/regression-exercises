@@ -17,14 +17,20 @@
 
 
 ## Planning
-    * properties that had a transaction in 2017! 
-        *filter your data IN SQL  determining which properties before bringing it into your Python environment.
-        *You will need to use the properties_2017, predictions_2017, and propertylandusetype tables.
-    *Remove landtaxvaluedollarcnt, structuretaxvaluedollarcnt, and taxamount.
+    1) properties that had a transaction in 2017! 
+        *filter data in SQL with predictions_2017, properties_2017, and propertylandusetype
+    2) Remove landtaxvaluedollarcnt, structuretaxvaluedollarcnt, and taxamount columns. Drop/impute null values. Feature engineering. Encode categorical variables. Normalize or Scale as needed
+    3) Train-Test Split
+    4) Find baseline and apply regression model selection
+    5) Fit the train selected regression model
+    6) Evaluate model's performance like Mean Absolute Error, Mean Squared Error, R-squared
+    7) FIND Key driver
+    8) Interpretation of visual and recommendation 
+    9) Prep Report and slide
 
 
 ## Initial Hypotheses or Questions of data
-
+    
 
 
 #### Hyperlink to acquire module (.py)
@@ -37,15 +43,38 @@
 [hyperlink](https://www.markdownguide.org/)
 
 #### Data Dictionary
-| Default | Left-aligned | Center-aligned | Right-aligned |
-|---------|:-------------|:--------------:|--------------:|
-| Default | Left | Center | Right |
-| Default | Left | Center | Right |
-| Default | Left | Center | Right |
-| Default | Left | Center | Right |
-| Default | Left | Center | Right |
-| Default | Left | Center | Right |
-| Default | Left | Center | Right |
+| Variable Name | Description | Data Type |
+|---------|:-------------|:--------------:||
+| parcelid | Unique identifier for the property | Numeric |
+| propertylandusetypeid | Type of land use for the property | Numeric |
+| transactiondate | Date of property transaction | Date |
+| bathromcnt | Numer of bathrooms | numeric |
+| bedroomcnt | number of bedrooms | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+| Default | Left | Center |
+
+
 
 #### How to reproduce the project
 * Bulleted item 1
