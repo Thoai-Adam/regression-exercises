@@ -74,7 +74,74 @@
 | Default | Left | Center |
 | Default | Left | Center |
 
+Certainly, here is the modified data dictionary without the "Non-Null Count" column:
 
+| Column Name                      | Description                                                       | Data Type |
+|----------------------------------|-------------------------------------------------------------------|-----------|
+| id                               | Unique identifier for the property                                | int64     |
+| parcelid                         | Unique identifier for the parcel                                  | int64     |
+| logerror                         | Logarithmic error of the property's Zestimate                     | float64   |
+| transactiondate                  | Date of the property transaction                                  | object    |
+| airconditioningtypeid             | Type of air conditioning system                                   | float64   |
+| architecturalstyletypeid          | Type of architectural style                                       | float64   |
+| basementsqft                      | Square footage of basement area                                  | float64   |
+| bathroomcnt                       | Number of bathrooms                                              | float64   |
+| bedroomcnt                        | Number of bedrooms                                               | float64   |
+| buildingclasstypeid               | Type of building class                                           | float64   |
+| buildingqualitytypeid             | Quality rating of the building                                   | float64   |
+| calculatedbathnbr                 | Calculated number of bathrooms                                   | float64   |
+| decktypeid                        | Type of deck                                                     | float64   |
+| finishedfloor1squarefeet          | Square footage of finished floor 1                               | float64   |
+| calculatedfinishedsquarefeet      | Calculated finished square footage of the property                | float64   |
+| finishedsquarefeet12              | Finished square footage of the property (12)                      | float64   |
+| finishedsquarefeet13              | Finished square footage of the property (13)                      | float64   |
+| finishedsquarefeet15              | Finished square footage of the property (15)                      | float64   |
+| finishedsquarefeet50              | Square footage of finished floor 50                               | float64   |
+| finishedsquarefeet6               | Square footage of finished floor 6                                | float64   |
+| fips                             | Federal Information Processing Standards (FIPS) code for the county| float64   |
+| fireplacecnt                      | Number of fireplaces                                             | float64   |
+| fullbathcnt                       | Number of full bathrooms                                         | float64   |
+| garagecarcnt                      | Number of garage spaces                                          | float64   |
+| garagetotalsqft                   | Total square footage of garages                                   | float64   |
+| hashottuborspa                    | Whether the property has a hot tub or spa                         | float64   |
+| heatingorsystemtypeid             | Type of heating or cooling system                                | float64   |
+| latitude                          | Latitude coordinates of the property                              | float64   |
+| longitude                         | Longitude coordinates of the property                             | float64   |
+| lotsizesquarefeet                 | Square footage of the lot                                        | float64   |
+| poolcnt                           | Number of pools on the property                                  | float64   |
+| poolsizesum                       | Total pool square footage                                        | float64   |
+| pooltypeid10                      | Type 10 pool                                                     | float64   |
+| pooltypeid2                       | Type 2 pool                                                      | float64   |
+| pooltypeid7                       | Type 7 pool                                                      | float64   |
+| propertycountylandusecode         | County land use code                                             | object    |
+| propertylandusetypeid             | Type of land use for the property                                | float64   |
+| propertyzoningdesc                | Description of property zoning                                    | object    |
+| rawcensustractandblock            | Raw census tract and block identifier                            | float64   |
+| regionidcity                      | City identifier                                                  | float64   |
+| regionidcounty                    | County identifier                                                | float64   |
+| regionidneighborhood              | Neighborhood identifier                                          | float64   |
+| regionidzip                       | ZIP code of the property                                         | float64   |
+| roomcnt                           | Number of rooms                                                  | float64   |
+| storytypeid                       | Type of story (e.g., basement, attic)                            | float64   |
+| threequarterbathnbr               | Number of three-quarter bathrooms                                | float64   |
+| typeconstructiontypeid            | Type of construction material used                               | float64   |
+| unitcnt                           | Number of units on the property                                  | float64   |
+| yardbuildingsqft17                | Square footage of yard building (17)                              | float64   |
+| yardbuildingsqft26                | Square footage of yard building (26)                              | float64   |
+| yearbuilt                         | Year the property was built                                      | float64   |
+| numberofstories                   | Number of stories in the property                                 | float64   |
+| fireplaceflag                     | Flag indicating the presence of a fireplace                       | float64   |
+| structuretaxvaluedollarcnt        | Assessed value of the property structure in dollars               | float64   |
+| taxvaluedollarcnt                 | Assessed property value in dollars                                | float64   |
+| assessmentyear                    | Year of property assessment                                      | float64   |
+| landtaxvaluedollarcnt             | Assessed value of the land in dollars                             | float64   |
+| taxamount                         | Property tax amount in dollars                                    | float64   |
+| taxdelinquencyflag                | Flag indicating tax delinquency                                   | object    |
+| taxdelinquencyyear                | Year of tax delinquency                                           | float64   |
+| censustractandblock               | Census tract and block identifier                                 | float64   |
+| propertylandusedesc               | Description of property land use                                  | object    |
+
+This data dictionary includes the column names, descriptions, and data types for the columns in the dataset. You can use this dictionary as a reference to understand the dataset's structure and variables.
 
 #### How to reproduce the project
 * Bulleted item 1
