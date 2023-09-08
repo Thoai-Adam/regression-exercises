@@ -4,7 +4,7 @@
 
 ## Goals : 
     * ML Regression model 
-        * predict property tax assessed values
+        * predict property tax assessed values; taxvaluedollarcnt
     * Key drivers of property
         * why some properties have much higher value than other when they are located so close to each other?
         * Why are some properties valued so differently from others when they havenearly the same physical attributes but only differ in location?
@@ -43,38 +43,7 @@
 [hyperlink](https://www.markdownguide.org/)
 
 #### Data Dictionary
-| Variable Name | Description | Data Type |
-|---------|:-------------|:--------------:||
-| parcelid | Unique identifier for the property | Numeric |
-| propertylandusetypeid | Type of land use for the property | Numeric |
-| transactiondate | Date of property transaction | Date |
-| bathromcnt | Numer of bathrooms | numeric |
-| bedroomcnt | number of bedrooms | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-| Default | Left | Center |
-
-Certainly, here is the modified data dictionary without the "Non-Null Count" column:
+This data dictionary includes the column names, descriptions, and data types for the columns in the dataset. 
 
 | Column Name                      | Description                                                       | Data Type |
 |----------------------------------|-------------------------------------------------------------------|-----------|
@@ -141,11 +110,11 @@ Certainly, here is the modified data dictionary without the "Non-Null Count" col
 | censustractandblock               | Census tract and block identifier                                 | float64   |
 | propertylandusedesc               | Description of property land use                                  | object    |
 
-This data dictionary includes the column names, descriptions, and data types for the columns in the dataset. You can use this dictionary as a reference to understand the dataset's structure and variables.
+
 
 #### How to reproduce the project
-* Bulleted item 1
-    * Bulleted subitem 1
+* Acquire Inner Joined table in SQL
+    * import in 
 * Bulleted item 2
 ***
 1. Ordered item 1  
