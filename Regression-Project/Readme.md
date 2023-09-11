@@ -108,7 +108,7 @@ This data dictionary includes the column names, descriptions, and data types for
 | taxdelinquencyflag                | Flag indicating tax delinquency                                   | object    |
 | taxdelinquencyyear                | Year of tax delinquency                                           | float64   |
 | censustractandblock               | Census tract and block identifier                                 | float64   |
-| propertylandusedesc               | Description of property land use                                  | object    |
+
 
 
 
