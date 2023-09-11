@@ -25,37 +25,41 @@ def prep_function():
     df= df[df['propertylandusedesc'] == 'Single Family Residential']
     return df
 
-def wrangle_zillow():
-    '''
-    Read zillow into a pandas DataFrame from mySQL
-    drop columns, drop any rows with Null values, 
-    convert columns data types accordingly,
-    return cleaned zillow DataFrame.
-    '''
-    # Acquire data 
-    df = get_properties_2017()
+def clean_zillow():
+        df= df[df['propertylandusedesc'] == 'Single Family Residential']
+    df.shape
 
-    # Drop all rows with NaN values.
-    df = df.dropna()
-    
-    # Convert to correct datatype
-    df['yearbuilt'] = df.yearbuilt.astype(int)
-    
-    # rename columns
-    
-    df = df.rename(columns={'yearbuilt':'year_built'})
-    df = df.rename(columns={'bedroomcnt':'bed_rooms'})
-    df = df.rename(columns={'bathroomcnt':'bath_rooms'})
-    df = df.rename(columns={'calculatedfinishedsquarefeet':'finished_sqft'})
-    
+# Convert the 'transactiondate' column to datetime
+    df['transactiondate'] = pd.to_datetime(df['transactiondate'])
 
-    df = df[df.finished_sqft < 15_000]
-    df = df[df.bed_rooms <= 10]
-    df = df[df.bath_rooms <= 10]
-    df = df[df.taxvaluedollarcnt <= df.taxvaluedollarcnt.quantile(0.75)]
+# Define the start and end dates for the range
+    start_date = pd.to_datetime('2017-01-01')
+    end_date = pd.to_datetime('2017-12-31')
 
+# Filter the DataFrame to keep rows within the specified date range
+    df= df[(df['transactiondate'] >= start_date) & (df['transactiondate'] <= end_date)]
 
-    # split
-    train, validate, test = split_data(df)
+    columns_to_keep = ['bathroomcnt',
+                   'bedroomcnt',
+                   'calculatedfinishedsquarefeet',
+                   'yearbuilt',
+                   'taxvaluedollarcnt']
+    df = df[columns_to_keep]
     
-    return train, validate, test
+    #dropping more nulls
+    df.dropna()
+    #1. Rename the columns to be more readable
+    df = df.rename(columns = {'bedroomcnt':'bedrooms', 
+                          'bathroomcnt':'bathrooms', 
+                          'calculatedfinishedsquarefeet':'area', 
+                          'taxvaluedollarcnt':'tax_value', })
+    
+def Do_Da_Split():
+        ### Splitting
+
+
+    train_validate, test = train_test_split(df, test_size=.2, random_state=42)
+
+    train, validate = train_test_split(train_validate, 
+                                       test_size=.3, 
+                                        random_state=42)
